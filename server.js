@@ -27,6 +27,12 @@ const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 const JWT_SECRET = process.env.JWT_SECRET || 'dev_jwt_secret_change_me';
 const CORS_ORIGIN = process.env.CORS_ORIGIN || '*';
 
+app.use(cors({
+  origin: process.env.CORS_ORIGIN || "https://ats-resume-frontend-six.vercel.app",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
+
 // MongoDB Configuration
 const MONGODB_USERNAME = process.env.MONGODB_USERNAME;
 const MONGODB_PASSWORD = process.env.MONGODB_PASSWORD;
